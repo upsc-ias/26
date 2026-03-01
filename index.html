@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UPSC Prelims Strategy Engine</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <h1 class="main-title">🚀UPSC Prelims Strategy Engine🛠️</h1>
+
+      <!-- ================= CALCULATOR SECTION ================= -->
+      <section class="glass-card">
+        <h2>🔢Marks Calculator📝</h2>
+
+        <label>Total Correct✅</label>
+        <input type="number" id="correct" min="0" max="100" />
+
+        <label>Total Wrong❌</label>
+        <input type="number" id="wrong" min="0" max="100" />
+
+        <label>Total Skipped</label>
+        <input type="number" id="skipped" readonly />
+
+        <div class="result" id="result"></div>
+      </section>
+
+      <!-- ================= GRAPH SECTION ================= -->
+      <section class="glass-card">
+        <h2>📊Strategy Graph🎯</h2>
+
+        <label>Desired Score</label>
+        <input
+          type="number"
+          id="desiredScore"
+          placeholder="Desired Score (e.g. 110)"
+          value="101"
+        />
+
+        <h3>🧠Smart Filters🔍</h3>
+        <div class="difficulty-container">
+          <button class="difficulty-btn" data-level="easy">Easy (medium accuracy + high attempt )</button>
+          <button class="difficulty-btn" data-level="medium">Medium (good accuracy + good attempt)</button>
+          <button class="difficulty-btn" data-level="hard">Hard (high accuracy + safe attempt)</button>
+        </div>
+
+        <label>Accuracy Range (%)</label>
+        <div style="display: flex; gap: 10px">
+          <input
+            type="number"
+            id="accMin"
+            placeholder="Min (e.g. 65)"
+            value="68"
+          />
+          <input
+            type="number"
+            id="accMax"
+            placeholder="Max (e.g. 75)"
+            value="78"
+          />
+        </div>
+
+        <label>Attempt Range</label>
+        <div style="display: flex; gap: 10px">
+          <input
+            type="number"
+            id="attMin"
+            placeholder="Min (e.g. 85)"
+            value="88"
+          />
+          <input
+            type="number"
+            id="attMax"
+            placeholder="Max (e.g. 95)"
+            value="98"
+          />
+        </div>
+
+        <button id="generateBtn">Generate Strategy</button>
+
+        <canvas id="chart"></canvas>
+      </section>
+
+      <!-- ================= TABLE SECTION ================= -->
+      <section class="glass-card">
+        <h2>✨Realizable Pairs♾️</h2>
+
+        <div class="output-box">
+          <div id="results"></div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
